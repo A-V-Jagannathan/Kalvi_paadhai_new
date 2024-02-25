@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
-
-const Color buttonBackground = Color(0xff194769);
-const Color appbarBackground = Color(0xff041c2f);
-const Color screenBackground = Color(0xff24292f);
+import 'utils/localizations_utils.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+const Color buttonBackground = Colors.white;
+const Color appbarBackground = Colors.white;
+const Color drawerbuttonBackground = Colors.white;
+const Color screenBackground = Color(0xff041c2f);
 const Color onexpanded = Color(0xff26ff00);
 const Color white = Color(0xffffffff);
 const double rad = 22.0;
@@ -10,8 +12,6 @@ const double pad = 12;
 const double butrad = 18;
 
 class After10 extends StatelessWidget {
-  final String title = '10 ஆம் வகுப்புக்குப் பிறகு';
-
   const After10({super.key});
 
   @override
@@ -20,7 +20,11 @@ class After10 extends StatelessWidget {
     return Scaffold(
       backgroundColor: screenBackground,
       appBar: AppBar(
-        title: Text(title, style: const TextStyle(fontSize: 18.0)),
+        iconTheme: IconThemeData(color: Colors.black),
+        title: Text(
+          AppLocalizations.of(context)!.after10Title,
+          style: const TextStyle(fontSize: 18.0, color: Colors.black),
+        ),
         backgroundColor: appbarBackground,
       ),
       body: ListView(
@@ -32,12 +36,12 @@ class After10 extends StatelessWidget {
               child: ExpansionTile(
                 backgroundColor: buttonBackground,
                 collapsedBackgroundColor: buttonBackground,
-                collapsedIconColor: white,
-                iconColor: onexpanded,
-                textColor: onexpanded,
-                collapsedTextColor: white,
-                title: const Text(
-                  'அறிவியல் குழுக்கள் (Science Groups)',
+                collapsedIconColor: Colors.black,
+                iconColor: Colors.green,
+                textColor: Colors.green,
+                collapsedTextColor: Colors.black,
+                title: Text(
+                  AppLocalizations.of(context)!.sciGrpTitle,
                 ),
                 children: [
                   Padding(
@@ -57,8 +61,8 @@ class After10 extends StatelessWidget {
                           ),
                         ),
                       ),
-                      child: const Text(
-                          "Group 1\nகுழு 1 - கணினி அறிவியல் குழுக்கள்"),
+                      child: Text(
+                        AppLocalizations.of(context)!.compSci),
                     ),
                   ),
                   Padding(
@@ -78,7 +82,7 @@ class After10 extends StatelessWidget {
                           ),
                         ),
                       ),
-                      child: const Text("Group 2\nகுழு 2 - உயிரியல் குழுக்கள"),
+                      child: Text(AppLocalizations.of(context)!.sci),
                     ),
                   ),
                 ],
@@ -92,11 +96,11 @@ class After10 extends StatelessWidget {
               child: ExpansionTile(
                 backgroundColor: buttonBackground,
                 collapsedBackgroundColor: buttonBackground,
-                collapsedIconColor: white,
-                iconColor: onexpanded,
-                textColor: onexpanded,
-                collapsedTextColor: white,
-                title: const Text('வணிகவியல் குழுக்கள் (Commerce)'),
+                collapsedIconColor: Colors.black,
+                iconColor: Colors.green,
+                textColor: Colors.green,
+                collapsedTextColor: Colors.black,
+                title: Text(AppLocalizations.of(context)!.comm10T),
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0), // Add padding here
@@ -115,7 +119,7 @@ class After10 extends StatelessWidget {
                           ),
                         ),
                       ),
-                      child: const Text("Commerce\nவணிகவியல்"),
+                      child: Text(AppLocalizations.of(context)!.comm10C),
                     ),
                   ),
                 ],
@@ -129,11 +133,11 @@ class After10 extends StatelessWidget {
               child: ExpansionTile(
                 backgroundColor: buttonBackground,
                 collapsedBackgroundColor: buttonBackground,
-                collapsedIconColor: white,
-                iconColor: onexpanded,
-                textColor: onexpanded,
-                collapsedTextColor: white,
-                title: const Text('கலை குழுக்கள் (Arts)'),
+                collapsedIconColor: Colors.black,
+                iconColor: Colors.green,
+                textColor: Colors.green,
+                collapsedTextColor: Colors.black,
+                title: Text(AppLocalizations.of(context)!.artsT),
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0), // Add padding here
@@ -152,7 +156,7 @@ class After10 extends StatelessWidget {
                           ),
                         ),
                       ),
-                      child: const Text("Arts\nகலை"),
+                      child: Text(AppLocalizations.of(context)!.artsC),
                     ),
                   ),
                 ],
@@ -166,11 +170,11 @@ class After10 extends StatelessWidget {
               child: ExpansionTile(
                 backgroundColor: buttonBackground,
                 collapsedBackgroundColor: buttonBackground,
-                collapsedIconColor: white,
-                iconColor: onexpanded,
-                textColor: onexpanded,
-                collapsedTextColor: white,
-                title: const Text('டிப்ளமோ (Diploma)'),
+                collapsedIconColor: Colors.black,
+                iconColor: Colors.green,
+                textColor: Colors.green,
+                collapsedTextColor: Colors.black,
+                title: Text(AppLocalizations.of(context)!.diploma),
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0), // Add padding here
@@ -189,7 +193,7 @@ class After10 extends StatelessWidget {
                           ),
                         ),
                       ),
-                      child: const Text("Diploma\nடிப்ளமோ "),
+                      child: Text(AppLocalizations.of(context)!.diploma),
                     ),
                   ),
                 ],

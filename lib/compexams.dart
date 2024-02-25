@@ -1,8 +1,11 @@
 import 'package:flutter/material.dart';
+import 'utils/localizations_utils.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-const Color buttonBackground = Color(0xff194769);
-const Color appbarBackground = Color(0xff041c2f);
-const Color screenBackground = Color(0xff24292f);
+const Color buttonBackground = Colors.white;
+const Color appbarBackground = Colors.white;
+const Color drawerbuttonBackground = Colors.white;
+const Color screenBackground = Color(0xff041c2f);
 const Color onexpanded = Color(0xff26ff00);
 const Color white = Color(0xffffffff);
 const double rad = 22.0;
@@ -10,7 +13,6 @@ const double pad = 12;
 const double butrad = 18;
 
 class CompetitiveExams extends StatelessWidget {
-  final String title = 'நுழைவுத் தேர்வுகள்';
 
   const CompetitiveExams({super.key});
 
@@ -20,9 +22,10 @@ class CompetitiveExams extends StatelessWidget {
     return Scaffold(
       backgroundColor: screenBackground,
       appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.black),
         title: Text(
-          title,
-          style: const TextStyle(fontSize: 18.0),
+          AppLocalizations.of(context)!.compTitle,
+          style: const TextStyle(fontSize: 18.0, color: Colors.black),
         ),
         backgroundColor: appbarBackground,
       ),
@@ -35,11 +38,11 @@ class CompetitiveExams extends StatelessWidget {
               child: ExpansionTile(
                 backgroundColor: buttonBackground,
                 collapsedBackgroundColor: buttonBackground,
-                collapsedIconColor: white,
-                iconColor: onexpanded,
-                textColor: onexpanded,
-                collapsedTextColor: white,
-                title: const Text('குறைந்தபட்ச தகுதி 10வது'),
+                collapsedIconColor: Colors.black,
+                iconColor: Colors.green,
+                textColor: Colors.green,
+                collapsedTextColor: Colors.black,
+                title: Text(AppLocalizations.of(context)!.tenthMin),
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0), // Add padding here
@@ -59,8 +62,7 @@ class CompetitiveExams extends StatelessWidget {
                           ),
                         ),
                       ),
-                      child: const Text(
-                          "Tamil Nadu Public Service Commission (TNPSC)\nதமிழ்நாடு பொது சேவை கமிஷன் தேர்வுகள் (டின்பிஎஸ்சி)"),
+                      child: Text(AppLocalizations.of(context)!.tnpsc),
                     ),
                   ),
                   Padding(
@@ -80,8 +82,7 @@ class CompetitiveExams extends StatelessWidget {
                           ),
                         ),
                       ),
-                      child: const Text(
-                          "Railway Recruitment Board (RRB) Exams\nரயில் வேலைக்கு வாய்ப்பு வாய்ப்புகள் (ஆர்ஆர்பி)"),
+                      child: Text(AppLocalizations.of(context)!.rrb),
                     ),
                   ),
                 ],
@@ -95,11 +96,11 @@ class CompetitiveExams extends StatelessWidget {
               child: ExpansionTile(
                 backgroundColor: buttonBackground,
                 collapsedBackgroundColor: buttonBackground,
-                collapsedIconColor: white,
-                iconColor: onexpanded,
-                textColor: onexpanded,
-                collapsedTextColor: white,
-                title: const Text('குறைந்தபட்ச தகுதி 12வது'),
+                collapsedIconColor: Colors.black,
+                iconColor: Colors.green,
+                textColor: Colors.green,
+                collapsedTextColor: Colors.black,
+                title: Text(AppLocalizations.of(context)!.twelthMin),
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0), // Add padding here
@@ -118,8 +119,7 @@ class CompetitiveExams extends StatelessWidget {
                           ),
                         ),
                       ),
-                      child: const Text(
-                          "Joint Entrance Examination (JEE)\nகூட்டு நுழைவுத் தேர்வ (ஜேஇஇ)"),
+                      child: Text(AppLocalizations.of(context)!.jee),
                     ),
                   ),
                   Padding(
@@ -139,8 +139,7 @@ class CompetitiveExams extends StatelessWidget {
                           ),
                         ),
                       ),
-                      child: const Text(
-                          "National Eligibility cum Entrance Test (NEET)\nதேசிய தகுதி மற்றும் நுழைவுத் தேர்வு (நீட்)"),
+                      child: Text(AppLocalizations.of(context)!.neet),
                     ),
                   ),
                   Padding(
@@ -160,8 +159,7 @@ class CompetitiveExams extends StatelessWidget {
                           ),
                         ),
                       ),
-                      child: const Text(
-                          "National Defence Academy (NDA) Exam\nதேசிய பாதுகாப்கள் அகாடமி தேர்வு (என்டிஏ)"),
+                      child: Text(AppLocalizations.of(context)!.nda),
                     ),
                   ),
                   Padding(
@@ -181,8 +179,7 @@ class CompetitiveExams extends StatelessWidget {
                           ),
                         ),
                       ),
-                      child: const Text(
-                          "Common Law Admission Test (CLAT)\nபொது சட்ட சேர்ப்பு பரீக்ஷை (சிஎல்ஏடி)"),
+                      child: Text(AppLocalizations.of(context)!.clat),
                     ),
                   ),
                 ],
@@ -196,11 +193,11 @@ class CompetitiveExams extends StatelessWidget {
               child: ExpansionTile(
                 backgroundColor: buttonBackground,
                 collapsedBackgroundColor: buttonBackground,
-                collapsedIconColor: white,
-                iconColor: onexpanded,
-                textColor: onexpanded,
-                collapsedTextColor: white,
-                title: const Text('குறைந்தபட்ச தகுதி பல்கலைக்கழக பட்டம்'),
+                collapsedIconColor: Colors.black,
+                iconColor: Colors.green,
+                textColor: Colors.green,
+                collapsedTextColor: Colors.black,
+                title: Text(AppLocalizations.of(context)!.undMin),
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0), // Add padding here
@@ -219,8 +216,7 @@ class CompetitiveExams extends StatelessWidget {
                           ),
                         ),
                       ),
-                      child: const Text(
-                          "UPSC Civil Services Examination\n ஐஏஎஎஸ் தேர்வு (யுபிஎஸ்சி)"),
+                      child: Text(AppLocalizations.of(context)!.upsc),
                     ),
                   ),
                   Padding(
@@ -240,8 +236,7 @@ class CompetitiveExams extends StatelessWidget {
                           ),
                         ),
                       ),
-                      child: const Text(
-                          "Staff Selection Commission (SSC) Exams\nபணியாளர் தேர்வு கமிஷன் தேர்வுகள் (எஸ்எஸ்சி)"),
+                      child:  Text(AppLocalizations.of(context)!.ssc),
                     ),
                   ),
                   Padding(
@@ -261,7 +256,7 @@ class CompetitiveExams extends StatelessWidget {
                           ),
                         ),
                       ),
-                      child: const Text("IBPS\nஐபிபிஎஸ் - வங்கி தேர்வுகள்"),
+                      child: Text(AppLocalizations.of(context)!.ibps),
                     ),
                   ),
                   Padding(
@@ -281,8 +276,7 @@ class CompetitiveExams extends StatelessWidget {
                           ),
                         ),
                       ),
-                      child: const Text(
-                          "Common Admission Test (CAT)\nபொது சேர்ப்பு பரீக்ஷை(சிஏடி)"),
+                      child: Text(AppLocalizations.of(context)!.cat),
                     ),
                   ),
                   Padding(
@@ -302,8 +296,7 @@ class CompetitiveExams extends StatelessWidget {
                           ),
                         ),
                       ),
-                      child: const Text(
-                          "Combined Defence Services (CDS) Exam\nஒன்றிய பாதுகாப்கள் சேவை பார்வை தேர்வு (சிடிஎஸ்)"),
+                      child: Text(AppLocalizations.of(context)!.cds),
                     ),
                   ),
                   Padding(
@@ -323,8 +316,7 @@ class CompetitiveExams extends StatelessWidget {
                           ),
                         ),
                       ),
-                      child: const Text(
-                          "Teacher Eligibility Test (TET)\nஆசிரியர் அரங்கேற்பு தேர்வு (டிஇடி)"),
+                      child: Text(AppLocalizations.of(context)!.tet),
                     ),
                   ),
                   Padding(
@@ -344,8 +336,7 @@ class CompetitiveExams extends StatelessWidget {
                           ),
                         ),
                       ),
-                      child: const Text(
-                          "Graduate Aptitude Test in Engineering (GATE)\nபொது அவானநிலை தேர்வு முதியில் (கேட்)"),
+                      child:Text(AppLocalizations.of(context)!.gate),
                     ),
                   ),
                   Padding(
@@ -365,8 +356,7 @@ class CompetitiveExams extends StatelessWidget {
                           ),
                         ),
                       ),
-                      child: const Text(
-                          "National Eligibility Test (NET)\nதேசிய அரசின் அரங்கேற்பு பரீக்ஷை (என்இடி)"),
+                      child: Text(AppLocalizations.of(context)!.net),
                     ),
                   ),
                 ],

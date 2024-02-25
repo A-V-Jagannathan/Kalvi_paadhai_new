@@ -16,7 +16,7 @@ publish_to: 'none' # Remove this line if you wish to publish to pub.dev
 # https://developer.apple.com/library/archive/documentation/General/Reference/InfoPlistKeyReference/Articles/CoreFoundationKeys.html
 # In Windows, build-name is used as the major, minor, and patch parts
 # of the product and file versions while build-number is used as the build suffix.
-version: 3.0.2
+version: 5.0.0
 
 environment:
   sdk: '>=3.1.5 <4.0.0'
@@ -33,6 +33,10 @@ dependencies:
   syncfusion_flutter_pdfviewer: ^23.1.44
   device_info_plus: ^9.1.0
   change_app_package_name: ^1.1.0
+  flutter_localizations: # Add this line
+    sdk: flutter # Add this line
+  intl: any
+  shared_preferences: ^2.0.13
 
 
   # The following adds the Cupertino Icons font to your application.
@@ -67,44 +71,123 @@ flutter:
   # The following line ensures that the Material Icons font is
   # included with your application, so that you can use the icons in
   # the material Icons class.
+  generate : true
   uses-material-design: true
   assets:
     - assets/logo.jpg
-    - assets/BDS.pdf
-    - assets/Vetinary.pdf
-    - assets/PhysioTheraphy.pdf
-    - assets/Pharmacy.pdf
-    - assets/OccupationalTheraphy.pdf
-    - assets/Nursing.pdf
-    - assets/BioTech.pdf
-    - assets/MicroBiology.pdf
-    - assets/BCom.pdf
-    - assets/BArch.pdf
-    - assets/Diploma.pdf
-    - assets/Group1.pdf
-    - assets/Group2.pdf
-    - assets/Arts.pdf
-    - assets/Commerce.pdf
-    - assets/TNPSC.pdf
-    - assets/RRB.pdf
-    - assets/JEE.pdf
-    - assets/NEET.pdf
-    - assets/NDA.pdf
-    - assets/UPSC.pdf
-    - assets/SSC.pdf
-    - assets/IBPS.pdf
-    - assets/CAT.pdf
-    - assets/CDS.pdf
-    - assets/TET.pdf
-    - assets/CLAT.pdf
-    - assets/GATE.pdf
-    - assets/NET.pdf
-    - assets/BComCA.pdf
-    - assets/BCA.pdf
-    - assets/BComIT.pdf
-    - assets/ArtsScience.pdf
-    - assets/MBBS.pdf
-    - assets/Engineering.pdf
+    - assets/en/BDS.pdf
+    - assets/en/Vetinary.pdf
+    - assets/en/PhysioTheraphy.pdf
+    - assets/en/Pharmacy.pdf
+    - assets/en/OccupationalTheraphy.pdf
+    - assets/en/Nursing.pdf
+    - assets/en/BioTech.pdf
+    - assets/en/MicroBiology.pdf
+    - assets/en/BCom.pdf
+    - assets/en/BArch.pdf
+    - assets/en/Diploma.pdf
+    - assets/en/Group1.pdf
+    - assets/en/Group2.pdf
+    - assets/en/Arts.pdf
+    - assets/en/Commerce.pdf
+    - assets/en/TNPSC.pdf
+    - assets/en/RRB.pdf
+    - assets/en/JEE.pdf
+    - assets/en/NEET.pdf
+    - assets/en/NDA.pdf
+    - assets/en/UPSC.pdf
+    - assets/en/SSC.pdf
+    - assets/en/IBPS.pdf
+    - assets/en/CAT.pdf
+    - assets/en/CDS.pdf
+    - assets/en/TET.pdf
+    - assets/en/CLAT.pdf
+    - assets/en/GATE.pdf
+    - assets/en/NET.pdf
+    - assets/en/BComCA.pdf
+    - assets/en/BCA.pdf
+    - assets/en/BComIT.pdf
+    - assets/en/ArtsScience.pdf
+    - assets/en/MBBS.pdf
+    - assets/en/Engineering.pdf
+    - assets/ta/BDS.pdf
+    - assets/ta/Vetinary.pdf
+    - assets/ta/PhysioTheraphy.pdf
+    - assets/ta/Pharmacy.pdf
+    - assets/ta/OccupationalTheraphy.pdf
+    - assets/ta/Nursing.pdf
+    - assets/ta/BioTech.pdf
+    - assets/ta/MicroBiology.pdf
+    - assets/ta/BCom.pdf
+    - assets/ta/BArch.pdf
+    - assets/ta/Diploma.pdf
+    - assets/ta/Group1.pdf
+    - assets/ta/Group2.pdf
+    - assets/ta/Arts.pdf
+    - assets/ta/Commerce.pdf
+    - assets/ta/TNPSC.pdf
+    - assets/ta/RRB.pdf
+    - assets/ta/JEE.pdf
+    - assets/ta/NEET.pdf
+    - assets/ta/NDA.pdf
+    - assets/ta/UPSC.pdf
+    - assets/ta/SSC.pdf
+    - assets/ta/IBPS.pdf
+    - assets/ta/CAT.pdf
+    - assets/ta/CDS.pdf
+    - assets/ta/TET.pdf
+    - assets/ta/CLAT.pdf
+    - assets/ta/GATE.pdf
+    - assets/ta/NET.pdf
+    - assets/ta/BComCA.pdf
+    - assets/ta/BCA.pdf
+    - assets/ta/BComIT.pdf
+    - assets/ta/ArtsScience.pdf
+    - assets/ta/MBBS.pdf
+    - assets/ta/Engineering.pdf
+    - assets/hi/BDS.pdf
+    - assets/hi/Vetinary.pdf
+    - assets/hi/PhysioTheraphy.pdf
+    - assets/hi/Pharmacy.pdf
+    - assets/hi/OccupationalTheraphy.pdf
+    - assets/hi/Nursing.pdf
+    - assets/hi/BioTech.pdf
+    - assets/hi/MicroBiology.pdf
+    - assets/hi/BCom.pdf
+    - assets/hi/BArch.pdf
+    - assets/hi/Diploma.pdf
+    - assets/hi/Group1.pdf
+    - assets/hi/Group2.pdf
+    - assets/hi/Arts.pdf
+    - assets/hi/Commerce.pdf
+    - assets/hi/TNPSC.pdf
+    - assets/hi/RRB.pdf
+    - assets/hi/JEE.pdf
+    - assets/hi/NEET.pdf
+    - assets/hi/NDA.pdf
+    - assets/hi/UPSC.pdf
+    - assets/hi/SSC.pdf
+    - assets/hi/IBPS.pdf
+    - assets/hi/CAT.pdf
+    - assets/hi/CDS.pdf
+    - assets/hi/TET.pdf
+    - assets/hi/CLAT.pdf
+    - assets/hi/GATE.pdf
+    - assets/hi/NET.pdf
+    - assets/hi/BComCA.pdf
+    - assets/hi/BCA.pdf
+    - assets/hi/BComIT.pdf
+    - assets/hi/ArtsScience.pdf
+    - assets/hi/MBBS.pdf
+    - assets/hi/Engineering.pdf
+    - assets/tenth_icon.png
+    - assets/twelfth_icon.png
+    - assets/Language_icon.png
+    - assets/Compexams.png
+    - assets/bluebglogo.jpg
+    - assets/bluebglogo_wotext.jpg
+    - assets/Logo_wotext.jpg
+    - assets/Logo_wtext.jpg
   # To add assets to your application, add an assets section, like this:
   # assets:
   #   - images/a_dot_burr.jpeg

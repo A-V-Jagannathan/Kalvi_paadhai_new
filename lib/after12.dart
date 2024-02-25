@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-const Color buttonBackground = Color(0xff194769);
-const Color appbarBackground = Color(0xff041c2f);
-const Color screenBackground = Color(0xff24292f);
+const Color buttonBackground = Colors.white;
+const Color appbarBackground = Colors.white;
+const Color drawerbuttonBackground = Colors.white;
+const Color screenBackground = Color(0xff041c2f);
 const Color onexpanded = Color(0xff26ff00);
 const Color white = Color(0xffffffff);
 const double rad = 22.0;
@@ -10,7 +12,6 @@ const double pad = 12;
 const double butrad = 18;
 
 class After12 extends StatelessWidget {
-  final String title = '12 ஆம் வகுப்புக்குப் பிறகு';
 
   const After12({super.key});
 
@@ -20,9 +21,10 @@ class After12 extends StatelessWidget {
     return Scaffold(
       backgroundColor: screenBackground,
       appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.black),
         title: Text(
-          title,
-          style: const TextStyle(fontSize: 18.0),
+            AppLocalizations.of(context)!.after12Title,
+          style: const TextStyle(fontSize: 18.0, color: Colors.black),
         ),
         backgroundColor: appbarBackground,
       ),
@@ -35,11 +37,11 @@ class After12 extends StatelessWidget {
               child: ExpansionTile(
                 backgroundColor: buttonBackground,
                 collapsedBackgroundColor: buttonBackground,
-                collapsedIconColor: white,
-                iconColor: onexpanded,
-                textColor: onexpanded,
-                collapsedTextColor: white,
-                title: const Text('உயிரியல் தொடர்பானது (Biology related)'),
+                collapsedIconColor: Colors.black,
+                iconColor: Colors.green,
+                textColor: Colors.green,
+                collapsedTextColor: Colors.black,
+                title: Text(AppLocalizations.of(context)!.bioRel),
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0), // Add padding here
@@ -58,8 +60,7 @@ class After12 extends StatelessWidget {
                           ),
                         ),
                       ),
-                      child: const Text(
-                          '''MBBS\nஇளநிலை மருத்துவம் மற்றும் அறுவையியல்'''),
+                      child: Text(AppLocalizations.of(context)!.mBBS),
                     ),
                   ),
                   Padding(
@@ -79,7 +80,7 @@ class After12 extends StatelessWidget {
                           ),
                         ),
                       ),
-                      child: const Text('BDS\nபல் அறுவை சிகிச்சை இளங்கலை'),
+                      child: Text(AppLocalizations.of(context)!.bds),
                     ),
                   ),
                   Padding(
@@ -99,7 +100,7 @@ class After12 extends StatelessWidget {
                           ),
                         ),
                       ),
-                      child: const Text('Veterinary Science\nகால்நடை அறிவியல்'),
+                      child: Text(AppLocalizations.of(context)!.vet),
                     ),
                   ),
                   Padding(
@@ -119,7 +120,7 @@ class After12 extends StatelessWidget {
                           ),
                         ),
                       ),
-                      child: const Text('Physiotheraphy\nஉடற்பயிற்சி சிகிச்சை'),
+                      child: Text(AppLocalizations.of(context)!.physio),
                     ),
                   ),
                   Padding(
@@ -139,7 +140,7 @@ class After12 extends StatelessWidget {
                           ),
                         ),
                       ),
-                      child: const Text('Pharmacy\nமருந்தகம்'),
+                      child: Text(AppLocalizations.of(context)!.phar),
                     ),
                   ),
                   Padding(
@@ -159,8 +160,7 @@ class After12 extends StatelessWidget {
                           ),
                         ),
                       ),
-                      child: const Text(
-                          'Occupational Theraphy\nதொழில்சார் சிகிச்சை'),
+                      child: Text(AppLocalizations.of(context)!.occT),
                     ),
                   ),
                   Padding(
@@ -180,7 +180,7 @@ class After12 extends StatelessWidget {
                             ),
                           ),
                         ),
-                        child: const Text("General Nursing\nபொது நர்சிங்")),
+                        child: Text(AppLocalizations.of(context)!.nur)),
                   ),
                   Padding(
                     padding: const EdgeInsets.all(8.0), // Add padding here
@@ -199,7 +199,7 @@ class After12 extends StatelessWidget {
                           ),
                         ),
                       ),
-                      child: const Text("Microbiology\nநுண்ணுயிரியல்"),
+                      child: Text(AppLocalizations.of(context)!.micR),
                     ),
                   ),
                   Padding(
@@ -220,7 +220,7 @@ class After12 extends StatelessWidget {
                         ),
                       ),
                       child:
-                          const Text("Biotechnology\nஉயிரி தொழில்நுட்பவியல்"),
+                      Text(AppLocalizations.of(context)!.biot),
                     ),
                   ),
                 ],
@@ -234,11 +234,11 @@ class After12 extends StatelessWidget {
               child: ExpansionTile(
                 backgroundColor: buttonBackground,
                 collapsedBackgroundColor: buttonBackground,
-                collapsedIconColor: white,
-                iconColor: onexpanded,
-                textColor: onexpanded,
-                collapsedTextColor: white,
-                title: const Text('பொறியியல் தொடர்புடையது (Engineering)'),
+                collapsedIconColor: Colors.black,
+                iconColor: Colors.green,
+                textColor: Colors.green,
+                collapsedTextColor: Colors.black,
+                title: Text(AppLocalizations.of(context)!.engT),
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0), // Add padding here
@@ -257,7 +257,7 @@ class After12 extends StatelessWidget {
                           ),
                         ),
                       ),
-                      child: const Text("Engineering\nபொறியியல்"),
+                      child: Text(AppLocalizations.of(context)!.engC),
                     ),
                   ),
                   Padding(
@@ -277,7 +277,7 @@ class After12 extends StatelessWidget {
                           ),
                         ),
                       ),
-                      child: const Text("Architecture\nகட்டிடக்கலை"),
+                      child: Text(AppLocalizations.of(context)!.arch),
                     ),
                   ),
                 ],
@@ -291,11 +291,11 @@ class After12 extends StatelessWidget {
               child: ExpansionTile(
                 backgroundColor: buttonBackground,
                 collapsedBackgroundColor: buttonBackground,
-                collapsedIconColor: white,
-                iconColor: onexpanded,
-                textColor: onexpanded,
-                collapsedTextColor: white,
-                title: const Text('வணிகம் மற்றும் கலை (Commerce and Arts)'),
+                collapsedIconColor: Colors.black,
+                iconColor: Colors.green,
+                textColor: Colors.green,
+                collapsedTextColor: Colors.black,
+                title: Text(AppLocalizations.of(context)!.comm12),
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0), // Add padding here
@@ -314,7 +314,7 @@ class After12 extends StatelessWidget {
                           ),
                         ),
                       ),
-                      child: const Text("B.COM\nவணிகவியல் இளங்கலை"),
+                      child: Text(AppLocalizations.of(context)!.bCom),
                     ),
                   ),
                   Padding(
@@ -334,8 +334,7 @@ class After12 extends StatelessWidget {
                           ),
                         ),
                       ),
-                      child: const Text(
-                          "B.COM CA\nகணினி பயன்பாட்டுடன் வணிகவியல் இளங்கலை"),
+                      child: Text(AppLocalizations.of(context)!.bComca),
                     ),
                   ),
                   Padding(
@@ -355,8 +354,7 @@ class After12 extends StatelessWidget {
                           ),
                         ),
                       ),
-                      child: const Text(
-                          "B.COM IT\nவணிகவியல் இளங்கலை, தகவல் தொழில்நுட்பம்"),
+                      child: Text(AppLocalizations.of(context)!.bComit),
                     ),
                   ),
                   Padding(
@@ -376,7 +374,7 @@ class After12 extends StatelessWidget {
                           ),
                         ),
                       ),
-                      child: const Text("BCA\nகணினி பயன்பாடுகளில் இளங்கலை"),
+                      child: Text(AppLocalizations.of(context)!.bca),
                     ),
                   ),
                 ],
@@ -390,11 +388,11 @@ class After12 extends StatelessWidget {
               child: ExpansionTile(
                 backgroundColor: buttonBackground,
                 collapsedBackgroundColor: buttonBackground,
-                collapsedIconColor: white,
-                iconColor: onexpanded,
-                textColor: onexpanded,
-                collapsedTextColor: white,
-                title: const Text('மற்ற கலை மற்றும் அறிவியல் படிப்புகள் '),
+                collapsedIconColor: Colors.black,
+                iconColor: Colors.green,
+                textColor: Colors.green,
+                collapsedTextColor: Colors.black,
+                title: Text(AppLocalizations.of(context)!.artsT),
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0), // Add padding here
@@ -413,8 +411,7 @@ class After12 extends StatelessWidget {
                           ),
                         ),
                       ),
-                      child: const Text(
-                          "Other Arts and Science courses\nமற்ற கலை மற்றும் அறிவியல் படிப்புகள் "),
+                      child: Text(AppLocalizations.of(context)!.artsC),
                     ),
                   ),
                 ],

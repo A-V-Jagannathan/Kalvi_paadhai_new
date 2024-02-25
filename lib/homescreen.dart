@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 const Color buttonBackground = Colors.blue;
 const Color appbarBackground = Color(0xff041c2f);
-const Color drawerbuttonBackground = Color(0xff0f263b);
-const Color screenBackground = Color(0xff24292f);
+const Color drawerbuttonBackground = Colors.white;
+const Color screenBackground = Color(0xff041c2f);
 const double butrad = 15;
 
 class HomeScreen extends StatelessWidget {
@@ -24,7 +25,9 @@ class HomeScreen extends StatelessWidget {
         child: ListTile(
           title: Text(
             title,
-            style: const TextStyle(color: Colors.white),
+            style: const TextStyle(
+              color: Colors.black,
+            ),
           ),
           onTap: () {
             Navigator.pushNamed(context, route);
@@ -33,19 +36,24 @@ class HomeScreen extends StatelessWidget {
       );
     }
 
-    double buttonWidth =
-        MediaQuery.of(context).size.width * 0.75; // 1/100th of screen width
-    double buttonHeight = MediaQuery.of(context).size.height * 0.1;
+    double height = MediaQuery.of(context).size.height;
+
+    double buttonrad = MediaQuery.of(context).size.width * 0.125;
+    double mainspacing = MediaQuery.of(context).size.height * 0.05;
+    double crossspacing =
+        MediaQuery.of(context).size.height * 0.01; // 1/100th of screen width
     return Scaffold(
         backgroundColor: screenBackground,
         appBar: AppBar(
-            title: const Text(
-              'முக பக்கம்',
+            iconTheme: IconThemeData(color: Colors.black),
+            title: Text(
+              AppLocalizations.of(context)!.homeTitle,
               style: TextStyle(
-                fontSize: 18.0,
+                color: Colors.black,
+                fontSize: 20.0,
               ),
             ),
-            backgroundColor: appbarBackground),
+            backgroundColor: Colors.white),
         drawer: Drawer(
           backgroundColor: appbarBackground,
           child: ListView(
@@ -54,126 +62,167 @@ class HomeScreen extends StatelessWidget {
                 decoration: BoxDecoration(
                   color: appbarBackground,
                   image: DecorationImage(
-                    image: AssetImage("assets/logo.jpg"),
+                    image: AssetImage("assets/Logo_wotext.jpg"),
                     fit: BoxFit.fitHeight,
                   ),
                 ),
                 child: null,
               ),
-              buildFloatingListTile('முக பக்கம்', '/home'),
-              buildFloatingListTile('உருவாக்கியவர்கள்', '/credits'),
-              buildFloatingListTile('கருத்து அல்லது கேள்விகள்', '/feedback'),
+              buildFloatingListTile(
+                  AppLocalizations.of(context)!.homeTitle, '/home'),
+              //buildFloatingListTile(AppLocalizations.of(context)!.creators, '/credits'),
+              buildFloatingListTile(
+                  AppLocalizations.of(context)!.feedback, '/feedback'),
             ],
           ),
         ),
-        body: SingleChildScrollView(
-          child: Center(
-            // Wrap the Column with SingleChildScrollView
-            child: Column(
-              // Align to the top
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: <Widget>[
-                const Padding(
-                  padding: EdgeInsets.only(top: 45, bottom: 15, right: 150),
-                  child: Text(
-                    "வணக்கம்!!",
-                    style: TextStyle(
-                      fontSize: 25.0,
-                      color: Colors.white,
-                      fontWeight: FontWeight.bold,
-                    ),
+        body: Stack(children: [
+          FractionallySizedBox(
+            alignment: Alignment.topCenter,
+            heightFactor: 0.2, // Starting at 10% from the top
+            child: Container(
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage('assets/Logo_wotext.jpg'),
+                  fit: BoxFit.fitHeight,
+                ),
+              ),
+            ),
+          ),
+          Positioned(
+            top: MediaQuery.of(context).size.height * 0.187,
+            left: 0,
+            right: 0,
+            child: Center(
+              child: Text(
+                AppLocalizations.of(context)!.quote,
+                style: TextStyle(
+                  fontSize: 0.016 * height,
+                  color: Colors.white,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ),
+          ),
+          Container(
+            color: Colors.white,
+            margin:
+                EdgeInsets.only(top: MediaQuery.of(context).size.height * 0.33),
+            child: GridView.count(
+              crossAxisCount: 2,
+              mainAxisSpacing: mainspacing,
+              crossAxisSpacing: crossspacing,
+              physics: const NeverScrollableScrollPhysics(),
+              childAspectRatio: 1.25,
+              children: [
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/lang_pref');
+                  },
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      CircleAvatar(
+                        backgroundColor: Colors.transparent,
+                        radius: buttonrad,
+                        backgroundImage: AssetImage('assets/Language_icon.png'),
+                      ),
+                      SizedBox(
+                          height: 0.01 *
+                              height), // Add spacing between the avatar and the text
+                      Text(
+                        AppLocalizations.of(context)!.languages,
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 0.0168 * height),
+                        textAlign: TextAlign.center,
+                      ),
+                    ],
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                      vertical: 25.0), // Add padding here
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/12th');
-                    },
-                    style: ButtonStyle(
-                      minimumSize: MaterialStateProperty.all(
-                        Size(buttonWidth, buttonHeight),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/12th');
+                  },
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      CircleAvatar(
+                        backgroundColor: Colors.transparent,
+                        radius: buttonrad,
+                        backgroundImage: AssetImage('assets/twelfth_icon.png'),
                       ),
-                      backgroundColor:
-                          MaterialStateProperty.all(buttonBackground),
-                      shape: MaterialStateProperty.all(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(
-                              25.0), // Adjust the radius as needed
-                        ),
-                      ),
-                    ),
-                    child: const Text(
-                      '12 ஆம் வகுப்புக்குப் பிறகு',
-                      style: TextStyle(
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
+                      SizedBox(
+                          height: 0.01 *
+                              height), // Add spacing between the avatar and the text
+                      Text(
+                        AppLocalizations.of(context)!.after12Title,
+                        style: TextStyle(
+                            fontWeight: FontWeight.bold,
+                            fontSize: 0.0168 * height),
+                        textAlign: TextAlign.center,
+                      ), // Add your text here
+                    ],
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                      vertical: 25.0), // Add padding here
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/10th');
-                    },
-                    style: ButtonStyle(
-                      minimumSize: MaterialStateProperty.all(
-                        Size(buttonWidth, buttonHeight),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/10th');
+                  },
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      CircleAvatar(
+                        backgroundColor: Colors.transparent,
+                        radius: buttonrad,
+                        backgroundImage: AssetImage('assets/tenth_icon.png'),
                       ),
-                      backgroundColor:
-                          MaterialStateProperty.all(buttonBackground),
-                      shape: MaterialStateProperty.all(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(
-                              25.0), // Adjust the radius as needed
+                      SizedBox(
+                          height: 0.01 *
+                              height), // Add spacing between the avatar and the text
+                      Expanded(
+                        child: Text(
+                          AppLocalizations.of(context)!.after10Title,
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 0.0168 * height),
+                          textAlign: TextAlign.center,
                         ),
-                      ),
-                    ),
-                    child: const Text(
-                      '10 ஆம் வகுப்புக்குப் பிறகு',
-                      style: TextStyle(
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
+                      ) // Add your text here
+                    ],
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.symmetric(
-                      vertical: 25.0), // Add padding here
-                  child: ElevatedButton(
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/competitive_exams');
-                    },
-                    style: ButtonStyle(
-                      minimumSize: MaterialStateProperty.all(
-                        Size(buttonWidth, buttonHeight),
+                GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/competitive_exams');
+                  },
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      CircleAvatar(
+                        backgroundColor: Colors.transparent,
+                        radius: buttonrad,
+                        backgroundImage: AssetImage('assets/Compexams.png'),
                       ),
-                      backgroundColor:
-                          MaterialStateProperty.all(buttonBackground),
-                      shape: MaterialStateProperty.all(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(
-                              25.0), // Adjust the radius as needed
+                      SizedBox(
+                          height: 0.0067 *
+                              height), // Add spacing between the avatar and the text
+                      Expanded(
+                        child: Text(
+                          AppLocalizations.of(context)!.compTitle,
+                          style: TextStyle(
+                              fontWeight: FontWeight.bold,
+                              fontSize: 0.0168 * height),
+                          textAlign: TextAlign.center,
                         ),
-                      ),
-                    ),
-                    child: const Text(
-                      'நுழைவுத் தேர்வுகள்',
-                      style: TextStyle(
-                        fontSize: 16.0,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
+                      ) // Add your text here
+                    ],
                   ),
-                ), // This takes up remaining spac
+                ),
+                // Repeat the above pattern for other buttons...
               ],
             ),
           ),
-        ));
+        ]));
   }
 }
