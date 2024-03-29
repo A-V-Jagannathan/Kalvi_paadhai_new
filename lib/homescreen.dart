@@ -70,7 +70,8 @@ class HomeScreen extends StatelessWidget {
               ),
               buildFloatingListTile(
                   AppLocalizations.of(context)!.homeTitle, '/home'),
-              //buildFloatingListTile(AppLocalizations.of(context)!.creators, '/credits'),
+              buildFloatingListTile(
+                  AppLocalizations.of(context)!.creators, '/credits'),
               buildFloatingListTile(
                   AppLocalizations.of(context)!.feedback, '/feedback'),
             ],

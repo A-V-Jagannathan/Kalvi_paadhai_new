@@ -174,7 +174,7 @@ class _MyAppState extends State<MyApp> {
         '/12th/BCOM': (context) => Content(AppLocalizations.of(context)!.bCom,
             getLocalizedImagePath('BCom.pdf')),
         '/feedback': (context) => const FeedbackPage(),
-        //'/credits': (context) => const CreditsPage(),
+        '/credits': (context) => const CreditsPage(),
 
         // Add routes for sub-pages here
       },

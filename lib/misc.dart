@@ -7,7 +7,7 @@ const Color drawerbuttonBackground = Colors.white;
 const Color screenBackground = Color(0xff041c2f);
 const double butrad = 15;
 
-/*class CreditsPage extends StatelessWidget {
+class CreditsPage extends StatelessWidget {
   const CreditsPage({super.key});
 
   @override
@@ -58,18 +58,21 @@ const double butrad = 15;
               ),
               child: null,
             ),
-            buildFloatingListTile(AppLocalizations.of(context)!.homeTitle, '/home'),
-            buildFloatingListTile(AppLocalizations.of(context)!.creators, '/credits'),
-            buildFloatingListTile(AppLocalizations.of(context)!.feedback, '/feedback'),
+            buildFloatingListTile(
+                AppLocalizations.of(context)!.homeTitle, '/home'),
+            buildFloatingListTile(
+                AppLocalizations.of(context)!.creators, '/credits'),
+            buildFloatingListTile(
+                AppLocalizations.of(context)!.feedback, '/feedback'),
           ],
         ),
       ),
-      body:  Center(
+      body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: <Widget>[
             Text(
-              AppLocalizations.of(context)!.creators,
+              AppLocalizations.of(context)!.purpose,
               textAlign: TextAlign.center,
               style: TextStyle(fontSize: 14.0, color: Colors.white),
             ),
@@ -79,8 +82,6 @@ const double butrad = 15;
     );
   }
 }
-
- */
 
 class FeedbackPage extends StatelessWidget {
   const FeedbackPage({super.key});
@@ -135,7 +136,8 @@ class FeedbackPage extends StatelessWidget {
             ),
             buildFloatingListTile(
                 AppLocalizations.of(context)!.homeTitle, '/home'),
-            //buildFloatingListTile(AppLocalizations.of(context)!.creators, '/credits'),
+            buildFloatingListTile(
+                AppLocalizations.of(context)!.creators, '/credits'),
             buildFloatingListTile(
                 AppLocalizations.of(context)!.feedback, '/feedback'),
           ],
